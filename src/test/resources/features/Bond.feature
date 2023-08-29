@@ -1,5 +1,8 @@
-Feature: Bond
+@ON-865
+Feature: Default
 
+	#As a user with invalid account I should be able to see an error message
+  @ON-842 @ON-848 @ON-850
   Scenario Outline: Successful Buy Bond Order
     Given I login as Admin user "<username>", "<password>"
     When I navigate to "Bonds" page
