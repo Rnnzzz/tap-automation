@@ -1,9 +1,9 @@
 @ON-865
 Feature: Bond
 
-	#As a RM user, I should be able to create bond order successfully
+  #As a RM user, I should be able to create bond order successfully
   @ON-842 @ON-848 @ON-850
-  Scenario Outline: Successful Buy Bond Order "<scenario>"
+  Scenario Outline: Buy Bond Order "<scenario>"
     Given I login as Admin user "<username>", "<password>"
     When I navigate to "Bonds" page
     And I create order bonds with "<portfolio>","<instrument>","<nominal_price>","<client_price>","<spread>","<phone>","<instructed_by>","<contact>","<override_reason>"
