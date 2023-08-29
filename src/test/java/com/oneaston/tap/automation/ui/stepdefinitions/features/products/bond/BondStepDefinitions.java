@@ -15,12 +15,17 @@ public class BondStepDefinitions {
         AssertionUtility.assertElementDisplayed(bondsOrderPage.webElementLocator.findElement("//b[text()='Create Bond Order']"));
     }
 
+    @Then("The order status should be {string}")
+    public void orderStatusShouldBe(String status) {
+        AssertionUtility.assertTextEquals(bondsOrderPage.getInteraction.getElementText("//label[text()='Status']/parent::td/following-sibling::td[1]/b"), status);
+    }
+
     @When("I create order bonds")
     public void iCreateOrderBond() {
 
     }
 
-    @When("I create order bonds with {string},{string},{string},{string},{string},{string},{string},{string},{string},")
+    @When("I create order bonds with {string},{string},{string},{string},{string},{string},{string},{string},{string}")
     public void iCreateOrderBondsWith(String portfolio, String instrument, String nominalPrice, String clientPrice, String spread, String phone, String instructedBy, String contact, String overrideReason) {
         bondsOrderPage.createBondOrder(portfolio, instrument, nominalPrice, clientPrice, spread, phone, instructedBy, contact, overrideReason);
     }

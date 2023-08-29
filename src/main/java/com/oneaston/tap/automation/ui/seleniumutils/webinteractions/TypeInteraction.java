@@ -2,6 +2,7 @@ package com.oneaston.tap.automation.ui.seleniumutils.webinteractions;
 
 import com.oneaston.tap.automation.ui.seleniumutils.WaitMechanism;
 import com.oneaston.tap.automation.ui.seleniumutils.WebElementLocator;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -29,7 +30,7 @@ public class TypeInteraction {
             WebElement element = webElementLocator.findElement(locator);
             element.clear();
             element.sendKeys(text);
-        } catch (StaleElementReferenceException exception) {
+        } catch (StaleElementReferenceException | NoSuchElementException exception) {
             type(locator, text);
         }
     }
