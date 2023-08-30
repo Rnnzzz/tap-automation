@@ -15,9 +15,9 @@ public class Hooks {
 
     @Before
     public static void setUp() {
-        {
-            System.setProperty("tap_url", "https://172.31.29.91:15051/wui/activity/index");
-        }
+//        {
+//            System.setProperty("tap_url", "https://172.31.29.91:15051/wui/activity/index");
+//        }
         WebDriverFactory.setUpDriver();
     }
 
