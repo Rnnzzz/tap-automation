@@ -7,7 +7,8 @@ import org.testng.annotations.DataProvider;
 @CucumberOptions(
         plugin = {"pretty",
                 "html:target/cucumber-reports/html-results/cucumber_result.html",
-                "json:target/cucumber-reports/json-result/cucumber_result.xml"},
+                "json:target/cucumber-reports/json-result/cucumber_result.xml",
+                "timeline:target/cucumber-reports"},
         features = {"src/test/resources/features"},
         glue = {"com.oneaston.tap.automation.ui.stepdefinitions",
                 "com.oneaston.tap.automation.ui.hooks"},
@@ -17,7 +18,7 @@ import org.testng.annotations.DataProvider;
 public class RunCucumberTest extends AbstractTestNGCucumberTests {
 
     @Override
-    @DataProvider(parallel = false)
+    @DataProvider(parallel = true)
     public Object[][] scenarios() {
         return super.scenarios();
     }
