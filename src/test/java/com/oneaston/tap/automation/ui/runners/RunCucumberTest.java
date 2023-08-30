@@ -7,8 +7,8 @@ import org.testng.annotations.DataProvider;
 @CucumberOptions(
         plugin = {"pretty",
                 "html:target/cucumber-reports/html-results/cucumber_result.html",
-                "json:target/cucumber-reports/json-result/cucumber_result.xml",
-                "timeline:target/cucumber-reports"},
+                "json:target/cucumber-reports/json-result/cucumber_result.json",
+                "timeline:target/cucumber-reports/timeline-results"},
         features = {"src/test/resources/features"},
         glue = {"com.oneaston.tap.automation.ui.stepdefinitions",
                 "com.oneaston.tap.automation.ui.hooks"},
